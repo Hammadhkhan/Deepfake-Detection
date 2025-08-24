@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: deepfake-backend
+    env: docker
+    plan: free
+    # Specifies the location of the Dockerfile relative to the repository root.
+    dockerfilePath: ./backend/Dockerfile
+    # Render will automatically map the service to port 10000.
+    # My Dockerfile EXPOSEs 5001, but Render handles the mapping.
+    # I don't need to specify a startCommand because it's in the Dockerfile's CMD.
+    healthCheck:
+      path: /
+      initialDelaySeconds: 30

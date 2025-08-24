@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  /* Custom Dark Theme by Jules */
+  --background: #111827; /* Tailwind gray-900 */
+  --foreground: #e5e7eb; /* Tailwind gray-200 */
+  --surface: #1f2937;    /* Tailwind gray-800 */
+  --accent: #14b8a6;     /* Tailwind teal-500 */
+  --accent-hover: #1d4ed8; /* Tailwind blue-700 */
+}
+
+@theme inline {
+  /* These variables are used by the Tailwind plugin */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+  The original file had a @media (prefers-color-scheme: dark) block.
+  I am intentionally removing it to enforce a single, consistent dark theme
+  as per the new design direction.
+*/
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Keeping the original font-family as a fallback */
+  font-family: Arial, Helvetica, sans-serif;
+}
